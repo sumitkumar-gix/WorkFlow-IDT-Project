@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow AI Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="sit_logo.png" alt="SIT Logo" class="college-logo">
+            <div class="header-top">
+                <h1>To-Do list TaskFlow</h1>
+                <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            </div>
+            <p>Smart Task Management for Pros</p>
+        </header>
+
+        <div class="pomodoro-container">
+            <div class="timer-display" id="timer">25:00</div>
+            <div class="timer-controls">
+                <button id="start-timer">Start Focus</button>
+                <button id="reset-timer">Reset</button>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="details">
+                <p id="numbers">0 / 0</p>
+                <span>Tasks Done</span>
+            </div>
+            <svg class="progress-ring" width="80" height="80">
+                <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.2)" stroke-width="8" fill="transparent" r="30" cx="40" cy="40"/>
+                <circle class="progress-ring__circle" stroke="#50fa7b" stroke-width="8" fill="transparent" r="30" cx="40" cy="40"/>
+            </svg>
+        </div>
+
+        <div class="input-group">
+            <div class="input-wrapper">
+                <input type="text" id="todo-input" placeholder="Type or speak task...">
+                <button id="mic-btn" title="Voice Input"><i class="fas fa-microphone"></i></button>
+            </div>
+            
+            <div class="options-wrapper">
+                <input type="date" id="date-input" title="Due Date">
+                <select id="priority-select">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button id="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+
+        <ul id="todo-list">
+            </ul>
+        
+        <p class="hint-text">💡 Tip: Use the mic or type <b>#high</b> to auto-tag how important is it!</p>
+    </div>
+    </div> <div class="team-footer">
+        <h3>Project by:</h3>
+        <ul>
+            <li>Tanudbhab Seth (4SI25IS074)</li>
+            <li>Tejashwi Raj Shah (4SI25IS125)</li>
+            <li>Vineesh Nagaraj Moger (4SI25IS109)</li>
+            <li>Sumit Kumar (4SI25IS078)</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    <script src="script.js"></script>
+</body>
+</html>

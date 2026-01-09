@@ -1,0 +1,281 @@
+/* --- Global Variables (Themes) --- */
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --text-color: #fff;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --btn-bg: #50fa7b;
+    --btn-text: #333;
+    --timer-bg: rgba(0, 0, 0, 0.2);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.6);
+    --text-color: #333;
+    --input-bg: #fff;
+    --timer-bg: rgba(255, 255, 255, 0.5);
+    color: #333;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+.container {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Header & Toggle */
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Pomodoro Timer */
+.pomodoro-container {
+    background: var(--timer-bg);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 10px;
+}
+
+.timer-controls button {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.timer-controls button:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+}
+
+/* Stats */
+.stats-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--timer-bg);
+    padding: 15px 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.details { text-align: left; }
+#numbers { font-size: 1.5rem; font-weight: bold; }
+
+.progress-ring__circle {
+    stroke-dasharray: 188.5;
+    stroke-dashoffset: 188.5;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-linecap: round;
+}
+
+/* Inputs */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    display: flex;
+    background: var(--input-bg);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+}
+
+#mic-btn {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #666;
+}
+#mic-btn.listening { color: #ff4b5c; animation: pulse 1s infinite; }
+
+.options-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+#date-input, #priority-select {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--input-bg);
+    outline: none;
+    cursor: pointer;
+    flex: 1;
+}
+
+#add-btn {
+    padding: 10px 20px;
+    background: var(--btn-bg);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--btn-text);
+}
+
+/* Todo List */
+#todo-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 5px solid transparent;
+    color: var(--text-color);
+}
+
+/* Logo Styling */
+.college-logo {
+    width: 80px;  /* Adjust this if the logo is too big/small */
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.college-logo:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+}
+
+/* Team Footer (Floating Glass Card) */
+.team-footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Darker background for readability */
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    z-index: 1000;
+    font-size: 0.85rem;
+}
+
+.team-footer h3 {
+    margin-bottom: 8px;
+    color: #50fa7b; /* Matches your green theme */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
+}
+
+.team-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-footer li {
+    margin-bottom: 4px;
+    opacity: 0.9;
+    background: none !important; /* Overrides the main list styling */
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Mobile: Move footer to bottom center on small screens */
+@media (max-width: 768px) {
+    .team-footer 
+    {
+        position: static;
+        margin-top: 40px;
+        width: 100%;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Priority Colors */
+li.priority-high { border-left-color: #ff5555; }
+li.priority-medium { border-left-color: #f1fa8c; }
+li.priority-low { border-left-color: #50fa7b; }
+
+.completed .task-text { text-decoration: line-through; opacity: 0.6; }
+
+input[type="checkbox"] { transform: scale(1.2); accent-color: #50fa7b; margin-right: 10px;}
+.delete-btn { background: transparent; border: none; color: #ff5555; cursor: pointer; }
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
